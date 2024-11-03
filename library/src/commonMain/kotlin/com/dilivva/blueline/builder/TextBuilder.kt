@@ -35,12 +35,14 @@ class TextBuilder{
      *
      * This function takes a string containing the text data and several optional configuration parameters:
      *  * `alignment`: Defines the text alignment (defaults to left alignment).
+     *  * `fontType`: Defines the font type (defaults to font A).
      *  * `font`: Defines the font style (defaults to normal font).
      *  * `style`: Defines the text style (defaults to normal style).
      *  * `color`: Defines the text color (defaults to black).
      *
      * @param data The string containing the text to be printed.
      * @param alignment The desired text alignment (optional, defaults to left).
+     * @param fontType The desired font type (optional, defaults to font A).
      * @param font The desired font style (optional, defaults to normal).
      * @param style The desired text style (optional, defaults to normal).
      * @param color The desired text color (optional, defaults to black).
@@ -48,12 +50,14 @@ class TextBuilder{
     fun styledText(
         data: String,
         alignment: Config.Alignment = Config.Alignment.LEFT,
+        fontType: Config.FontType = Config.FontType.FONT_A,
         font: Config.Font = Config.Font.NORMAL,
         style: Config.Style = Config.Style.NORMAL,
         color: Config.Color = Config.Color.BLACK
     ){
         resetConfig()
         textData += alignment.alignBytes
+        textData += fontType.fontTypeBytes
         textData += font.fontBytes
         textData += style.style
         textData += color.colorText

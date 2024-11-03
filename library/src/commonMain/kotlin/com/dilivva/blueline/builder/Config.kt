@@ -51,6 +51,11 @@ sealed class Config {
         RIGHT(byteArrayOf(0x1B, 0x61, 0x02))
     }
 
+    enum class FontType(val fontTypeBytes: ByteArray) {
+        FONT_A(byteArrayOf(0x1B, 0x4D, 0x00)),
+        FONT_B(byteArrayOf(0x1B, 0x4D, 0x01))
+    }
+
     /**
      * Enum representing font styles available for printing.
      *
